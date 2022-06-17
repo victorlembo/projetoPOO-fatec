@@ -828,26 +828,9 @@ public class GuiEmitirPedido extends javax.swing.JFrame {
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
 
-        cadPed.get(posPed).setDataPagto(txtDataPedido.getText());
+        /*cadPed.get(posPed).setDataPagto(txtDataPedido.getText());
         cadPed.get(posPed).setFormaPagto(Boolean.parseBoolean(String.valueOf(cbxFormaPagamento.getSelectedItem())));
 
-        //txtDataPedido.setText((cadPed.get(posPed)).getDataEmissao());
-        //cbxFormaPagamento.setSelectedIndex(0);
-        /*  if((cadPed.get(posPed)).isFormaPagto()) {
-                    rbtVista.setSelected();
-                } else {
-                    rbtPrazo.setSelected();
-                }
-        
-        if (combobox.getSelectedItem().equals("A Vista")) 
-         int iAns = iNum1 + iNum2;
-        else if (combobox.getSelectedItem().equals("A Prazo")) 
-         int iAns = iNum1 - iNum2;
-         */
-        /* p.setCliente((Cliente) cadCliVend.get(posCli));
-        p.setVendedor((Vendedor) cadCliVend.get(posVend));
-         */
-        
         txtNumPedido.setText(null);
         txtCodProd.setText(null);
         txtDataPedido.setText(null);
@@ -880,7 +863,7 @@ public class GuiEmitirPedido extends javax.swing.JFrame {
         txtNumPedido.requestFocus();
 
         btnNumPedido.setEnabled(true);
-        modTblItemPedido.setRowCount(0);
+        modTblItemPedido.setRowCount(0);*/
 
 
     }//GEN-LAST:event_btnAlterarActionPerformed
