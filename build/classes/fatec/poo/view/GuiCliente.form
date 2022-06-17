@@ -39,7 +39,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="txtEndereco" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
@@ -80,9 +80,9 @@
                               </Group>
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="txtCpf" min="-2" pref="73" max="-2" attributes="0"/>
-                              <EmptySpace min="129" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="txtCpf" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -150,14 +150,12 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblLimiteCredito" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtLimiteCred" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblLimiteDisponivel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblLimiteDisp" max="32767" attributes="0"/>
-                          <Component id="lblLimiteDisponivel" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lblLimiteDisp" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="45" max="32767" attributes="0"/>

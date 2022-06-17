@@ -190,7 +190,7 @@ public class GuiCliente extends javax.swing.JFrame {
                             .addComponent(lblCpf))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtEndereco, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +222,7 @@ public class GuiCliente extends javax.swing.JFrame {
                                                     .addComponent(lblLimiteDisp, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                                 .addGap(56, 56, 56))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblTelefone)
@@ -275,12 +275,11 @@ public class GuiCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblLimiteCredito)
-                            .addComponent(txtLimiteCred, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtLimiteCred, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLimiteDisponivel)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblLimiteDisp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblLimiteDisponivel))))
+                        .addComponent(lblLimiteDisp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -403,21 +402,25 @@ public class GuiCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncluirActionPerformed
-         if(txtCpf.getText() == null || txtNome.getText() == null || txtLimiteCred == null
-          || txtEndereco.getText() == null || txtCidade.getText() == null || txtCep.getText() == null || txtDdd.getText() == null || txtTelefone.getText() == null) {
-            JOptionPane.showMessageDialog(null, "Informe todos os dados!");
-            txtCpf.requestFocus();  
-        } else {
+         if(txtNome.getText() == null || txtNome.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null, "Informe o nome do Cliente!");
+        }
+         if(txtLimiteCred.getText() == null || txtLimiteCred.getText().trim().equals("")){
+             JOptionPane.showMessageDialog(null, "Informe o limite de credito do Cliente!");
+         }
+         else {
             
         Cliente c = new Cliente(txtCpf.getText(), 
-                                        txtNome.getText(),
-                                        Double.parseDouble(txtLimiteCred.getText()));
+                                txtNome.getText(),
+                                Double.parseDouble(txtLimiteCred.getText()));
                                         c.setEndereco(txtEndereco.getText());
                                         c.setCidade(txtCidade.getText());
                                         c.setCep(txtCep.getText());
                                         c.setDdd(txtDdd.getText());
                                         c.setUf(String.valueOf(cbxUf.getSelectedItem()));
                                         c.setTelefone(txtTelefone.getText());
+                                        c.setLimiteCred(Double.parseDouble(txtLimiteCred.getText()));
+                                        c.setLimiteDisp(Double.parseDouble(txtLimiteCred.getText()));
                                         cadCliVend.add(c); 
         
         txtCpf.setText(null);

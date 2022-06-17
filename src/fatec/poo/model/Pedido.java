@@ -1,4 +1,5 @@
 package fatec.poo.model;
+
 import java.util.ArrayList;
 
 /**
@@ -6,6 +7,7 @@ import java.util.ArrayList;
  * @author EdCarlosMateusNunesVictorLembo
  */
 public class Pedido {
+
     private String numero;
     private String dataEmissao;
     private String dataPagto;
@@ -13,13 +15,21 @@ public class Pedido {
     private boolean situacao;
     private Cliente cliente;
     private Vendedor vendedor;
-    
+
     private ArrayList<ItemPedido> itensPedido;
 
     public Pedido(String numero, String dataEmissao) {
         this.numero = numero;
         this.dataEmissao = dataEmissao;
-        itensPedido = new ArrayList <ItemPedido>();
+        itensPedido = new ArrayList<ItemPedido>();
+    }
+
+    public boolean isFormaPagto() {
+        return formaPagto;
+    }
+
+    public ItemPedido getItensPedido(int i) {
+        return itensPedido.get(i);
     }
 
     public Cliente getCliente() {
@@ -36,7 +46,7 @@ public class Pedido {
 
     public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
-    }   
+    }
 
     public void setDataPagto(String dataPagto) {
         this.dataPagto = dataPagto;
@@ -69,10 +79,11 @@ public class Pedido {
     public boolean isSituacao() {
         return situacao;
     }
-    
-    public void addItensPedido(ItemPedido itensPed){
+
+    public void addItensPedido(ItemPedido itensPed) {
         itensPedido.add(itensPed);
         itensPed.setPedido(this);
         cliente.setLimiteDisp(cliente.getLimiteDisp() - (itensPed.getProduto().getPreco() * itensPed.getQtdeVendida()));
-    } 
+
+    }
 }

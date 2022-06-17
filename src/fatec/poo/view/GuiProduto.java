@@ -62,6 +62,11 @@ public class GuiProduto extends javax.swing.JFrame {
         txtPrecoUnit.setEnabled(false);
 
         txtQtdeDisp.setEnabled(false);
+        txtQtdeDisp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtQtdeDispActionPerformed(evt);
+            }
+        });
 
         btnConsultar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fatec/poo/view/icon/pesq.png"))); // NOI18N
@@ -368,6 +373,10 @@ public class GuiProduto extends javax.swing.JFrame {
     private void txtUnidMedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidMedActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUnidMedActionPerformed
+
+    private void txtQtdeDispActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtdeDispActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQtdeDispActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterar;
