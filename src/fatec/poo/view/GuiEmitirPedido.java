@@ -829,14 +829,18 @@ public class GuiEmitirPedido extends javax.swing.JFrame {
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
 
-        cadPed.get(posPed).setDataPagto(txtDataPedido.getText());
+        /*cadPed.get(posPed).setDataPagto(txtDataPedido.getText());
         cadPed.get(posPed).setFormaPagto(Boolean.parseBoolean(String.valueOf(cbxFormaPagamento.getSelectedItem())));
+<<<<<<< HEAD
         p.setCliente((Cliente) cadCliVend.get(posCli));
         p.setVendedor((Vendedor) cadCliVend.get(posVend));
         //((Vendedor) cadCliVend.get(posVend)).addPedido(p);
         //((Cliente) cadCliVend.get(posCli)).addPedido(p);
 
         //cadPed.add(p);
+=======
+
+>>>>>>> 2fd483fbf91c1544ccc61bced65d48ace23f320c
         txtNumPedido.setText(null);
         txtCodProd.setText(null);
         txtDataPedido.setText(null);
@@ -869,7 +873,7 @@ public class GuiEmitirPedido extends javax.swing.JFrame {
         txtNumPedido.requestFocus();
 
         btnNumPedido.setEnabled(true);
-        modTblItemPedido.setRowCount(0);
+        modTblItemPedido.setRowCount(0);*/
 
 
     }//GEN-LAST:event_btnAlterarActionPerformed
