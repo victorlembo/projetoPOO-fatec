@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * @author EdCarlosMateusNunesVictorLembo
  */
 public class ItemPedido {
+
     private int sequencia;
     private double qtdeVendida;
     private Produto produto;
@@ -16,7 +17,7 @@ public class ItemPedido {
         this.sequencia = sequencia;
         this.qtdeVendida = qtdeVendida;
         this.produto = produto;
-        produto.setQtdeEstoque(produto.getQtdeEstoque() - qtdeVendida);
+
     }
 
     public Produto getProduto() {
@@ -25,7 +26,7 @@ public class ItemPedido {
 
     public void setProduto(Produto produto) {
         this.produto = produto;
-    }  
+    }
 
     public Pedido getPedido() {
         return pedido;
@@ -33,10 +34,11 @@ public class ItemPedido {
 
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
-    }  
+    }
 
     public void setQtdeVendida(double qtdeVendida) {
         this.qtdeVendida = qtdeVendida;
+        produto.setQtdeEstoque(produto.getQtdeEstoque() - qtdeVendida);
     }
 
     public int getSequencia() {

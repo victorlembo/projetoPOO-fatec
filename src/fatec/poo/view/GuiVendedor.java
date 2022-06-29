@@ -43,7 +43,7 @@ public class GuiVendedor extends javax.swing.JFrame {
         txtCpf = new javax.swing.JFormattedTextField();
         lblEndereco = new javax.swing.JLabel();
         txtSalBase = new javax.swing.JTextField();
-        lblTxComissao = new javax.swing.JLabel();
+        txtTxComissao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro Vendedor");
@@ -166,7 +166,7 @@ public class GuiVendedor extends javax.swing.JFrame {
             }
         });
 
-        lblTxComissao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtTxComissao.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,12 +199,12 @@ public class GuiVendedor extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(lblTaxaComissao)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtDdd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(lblTxComissao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(txtTxComissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -228,6 +228,9 @@ public class GuiVendedor extends javax.swing.JFrame {
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtSalBase, txtTxComissao});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -236,36 +239,34 @@ public class GuiVendedor extends javax.swing.JFrame {
                     .addComponent(lblCpf)
                     .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNome)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblEndereco)
-                            .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCidade)
-                            .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUf)
-                            .addComponent(cbxUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblCep))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtDdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblTelefone)))
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblSalarioBase)
-                            .addComponent(txtSalBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTaxaComissao)))
-                    .addComponent(lblTxComissao, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNome)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEndereco)
+                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCidade)
+                    .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUf)
+                    .addComponent(cbxUf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblCep))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblTelefone)))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSalarioBase)
+                    .addComponent(txtSalBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTaxaComissao)
+                    .addComponent(txtTxComissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,6 +276,8 @@ public class GuiVendedor extends javax.swing.JFrame {
                     .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtSalBase, txtTxComissao});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -308,7 +311,7 @@ public class GuiVendedor extends javax.swing.JFrame {
                 txtDdd.setText(cadCliVend.get(posVendedor).getDdd());
                 txtTelefone.setText(cadCliVend.get(posVendedor).getTelefone());
                 txtSalBase.setText(String.valueOf(((Vendedor) cadCliVend.get(posVendedor)).getSalarioBase()));
-                lblTxComissao.setText(String.valueOf(((Vendedor) cadCliVend.get(posVendedor)).getTaxaComissao()));
+                txtTxComissao.setText(String.valueOf(((Vendedor) cadCliVend.get(posVendedor)).getTaxaComissao()));
 
                 btnConsultar.setEnabled(false);
                 btnIncluir.setEnabled(false);
@@ -330,7 +333,7 @@ public class GuiVendedor extends javax.swing.JFrame {
             txtDdd.setEnabled(true);
             txtTelefone.setEnabled(true);
             txtSalBase.setEnabled(true);
-            lblTxComissao.setEnabled(true);
+            txtTxComissao.setEnabled(true);
         } else {
             JOptionPane.showMessageDialog(null, "Cpf Inválido!");
             txtCpf.requestFocus();
@@ -354,53 +357,54 @@ public class GuiVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSalBaseActionPerformed
 
     private void btnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncluirActionPerformed
-         if(txtCpf.getText() == null || txtNome.getText() == null || txtSalBase == null
-          || txtEndereco.getText() == null || txtCidade.getText() == null || txtCep.getText() == null || txtDdd.getText() == null || txtTelefone.getText() == null) {
+        if (txtCpf.getText() == null || txtNome.getText() == null || txtSalBase == null
+                || txtEndereco.getText() == null || txtCidade.getText() == null || txtCep.getText() == null || txtDdd.getText() == null || txtTelefone.getText() == null) {
             JOptionPane.showMessageDialog(null, "Informe todos os dados!");
-            txtCpf.requestFocus();  
+            txtCpf.requestFocus();
         } else {
-        
-        Vendedor v = new Vendedor(txtCpf.getText(),
-                                    txtNome.getText(),
-                                    Double.parseDouble(txtSalBase.getText()));
-                                    v.setEndereco(txtEndereco.getText());
-                                    v.setCidade(txtCidade.getText());
-                                    v.setCep(txtCep.getText());
-                                    v.setDdd(txtDdd.getText());
-                                    v.setUf(String.valueOf(cbxUf.getSelectedItem()));
-                                    v.setTelefone(txtTelefone.getText());
-                                    cadCliVend.add(v);
 
-        txtCpf.setText(null);
-        txtNome.setText(null);
-        txtEndereco.setText(null);
-        txtCidade.setText(null);
-        cbxUf.setSelectedItem(null);
-        txtCep.setText(null);
-        txtDdd.setText(null);
-        txtTelefone.setText(null);
-        txtSalBase.setText(null);
-        lblTxComissao.setText(null);
+            Vendedor v = new Vendedor(txtCpf.getText(),
+                    txtNome.getText(),
+                    Double.parseDouble(txtSalBase.getText()));
+            v.setEndereco(txtEndereco.getText());
+            v.setCidade(txtCidade.getText());
+            v.setCep(txtCep.getText());
+            v.setDdd(txtDdd.getText());
+            v.setUf(String.valueOf(cbxUf.getSelectedItem()));
+            v.setTelefone(txtTelefone.getText());
+            v.setTaxaComissao(Double.parseDouble(txtTxComissao.getText()));
+            cadCliVend.add(v);
 
-        btnConsultar.setEnabled(true);
-        btnIncluir.setEnabled(false);
-        btnAlterar.setEnabled(false);
-        btnExcluir.setEnabled(false);
-        
-        txtCpf.setEnabled(true);
-        txtNome.setEnabled(false);
-        txtNome.setEnabled(false);
-        txtEndereco.setEnabled(false);
-        txtCidade.setEnabled(false);
-        cbxUf.setEnabled(false);
-        txtCep.setEnabled(false);
-        txtDdd.setEnabled(false);
-        txtTelefone.setEnabled(false);
-        txtSalBase.setEnabled(false);
-        lblTxComissao.setEnabled(false);
-        
-        txtCpf.requestFocus();
-    }
+            txtCpf.setText(null);
+            txtNome.setText(null);
+            txtEndereco.setText(null);
+            txtCidade.setText(null);
+            cbxUf.setSelectedIndex(0);
+            txtCep.setText(null);
+            txtDdd.setText(null);
+            txtTelefone.setText(null);
+            txtSalBase.setText(null);
+            txtTxComissao.setText(null);
+
+            btnConsultar.setEnabled(true);
+            btnIncluir.setEnabled(false);
+            btnAlterar.setEnabled(false);
+            btnExcluir.setEnabled(false);
+
+            txtCpf.setEnabled(true);
+            txtNome.setEnabled(false);
+            txtNome.setEnabled(false);
+            txtEndereco.setEnabled(false);
+            txtCidade.setEnabled(false);
+            cbxUf.setEnabled(false);
+            txtCep.setEnabled(false);
+            txtDdd.setEnabled(false);
+            txtTelefone.setEnabled(false);
+            txtSalBase.setEnabled(false);
+            txtTxComissao.setEnabled(false);
+
+            txtCpf.requestFocus();
+        }
     }//GEN-LAST:event_btnIncluirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
@@ -413,24 +417,24 @@ public class GuiVendedor extends javax.swing.JFrame {
         cadCliVend.get(posVendedor).setCep(txtCep.getText());
         cadCliVend.get(posVendedor).setUf(String.valueOf(cbxUf.getSelectedItem()));
         ((Vendedor) cadCliVend.get(posVendedor)).setSalarioBase(Double.parseDouble(txtSalBase.getText()));
-        ((Vendedor)cadCliVend.get(posVendedor)).setTaxaComissao(Double.parseDouble(lblTxComissao.getText()));
+        ((Vendedor) cadCliVend.get(posVendedor)).setTaxaComissao(Double.parseDouble(txtTxComissao.getText()));
 
         txtCpf.setText(null);
         txtNome.setText(null);
         txtEndereco.setText(null);
         txtCidade.setText(null);
-        cbxUf.setSelectedItem(null);
+        cbxUf.setSelectedIndex(0);
         txtCep.setText(null);
         txtDdd.setText(null);
         txtTelefone.setText(null);
         txtSalBase.setText(null);
-        lblTxComissao.setText(null);
-        
+        txtTxComissao.setText(null);
+
         btnConsultar.setEnabled(true);
         btnIncluir.setEnabled(false);
         btnAlterar.setEnabled(false);
         btnExcluir.setEnabled(false);
-        
+
         txtCpf.setEnabled(true);
         txtNome.setEnabled(false);
         txtNome.setEnabled(false);
@@ -441,8 +445,8 @@ public class GuiVendedor extends javax.swing.JFrame {
         txtDdd.setEnabled(false);
         txtTelefone.setEnabled(false);
         txtSalBase.setEnabled(false);
-        lblTxComissao.setEnabled(false);
-        
+        txtTxComissao.setEnabled(false);
+
         txtCpf.requestFocus();
     }//GEN-LAST:event_btnAlterarActionPerformed
 
@@ -456,18 +460,18 @@ public class GuiVendedor extends javax.swing.JFrame {
         txtNome.setText(null);
         txtEndereco.setText(null);
         txtCidade.setText(null);
-        cbxUf.setSelectedItem(null);
+        cbxUf.setSelectedIndex(0);
         txtCep.setText(null);
         txtDdd.setText(null);
         txtTelefone.setText(null);
         txtSalBase.setText(null);
-        lblTxComissao.setText(null);
-        
+        txtTxComissao.setText(null);
+
         btnConsultar.setEnabled(true);
         btnIncluir.setEnabled(false);
         btnAlterar.setEnabled(false);
         btnExcluir.setEnabled(false);
-        
+
         txtCpf.setEnabled(true);
         txtNome.setEnabled(false);
         txtNome.setEnabled(false);
@@ -478,8 +482,8 @@ public class GuiVendedor extends javax.swing.JFrame {
         txtDdd.setEnabled(false);
         txtTelefone.setEnabled(false);
         txtSalBase.setEnabled(false);
-        lblTxComissao.setEnabled(false);
-        
+        txtTxComissao.setEnabled(false);
+
         txtCpf.requestFocus();
     }//GEN-LAST:event_btnExcluirActionPerformed
 
@@ -498,7 +502,6 @@ public class GuiVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel lblSalarioBase;
     private javax.swing.JLabel lblTaxaComissao;
     private javax.swing.JLabel lblTelefone;
-    private javax.swing.JLabel lblTxComissao;
     private javax.swing.JLabel lblUf;
     private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCidade;
@@ -508,6 +511,7 @@ public class GuiVendedor extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtSalBase;
     private javax.swing.JTextField txtTelefone;
+    private javax.swing.JTextField txtTxComissao;
     // End of variables declaration//GEN-END:variables
     private ArrayList<Pessoa> cadCliVend;
     private int posVendedor;

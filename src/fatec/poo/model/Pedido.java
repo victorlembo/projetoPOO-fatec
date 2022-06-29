@@ -83,6 +83,7 @@ public class Pedido {
     public void addItensPedido(ItemPedido itensPed) {
         itensPedido.add(itensPed);
         itensPed.setPedido(this);
+
         cliente.setLimiteDisp(cliente.getLimiteDisp() - (itensPed.getProduto().getPreco() * itensPed.getQtdeVendida()));
 
     }

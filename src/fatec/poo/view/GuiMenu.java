@@ -32,6 +32,7 @@ public class GuiMenu extends javax.swing.JFrame {
         mniSair = new javax.swing.JMenuItem();
         mnuPedido = new javax.swing.JMenu();
         mniEmitirPedido = new javax.swing.JMenuItem();
+        mniConsultarComissaoVendedor = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Controle de Vendas");
@@ -83,6 +84,14 @@ public class GuiMenu extends javax.swing.JFrame {
         });
         mnuPedido.add(mniEmitirPedido);
 
+        mniConsultarComissaoVendedor.setText("Consutar Comissao Vendedor");
+        mniConsultarComissaoVendedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniConsultarComissaoVendedorActionPerformed(evt);
+            }
+        });
+        mnuPedido.add(mniConsultarComissaoVendedor);
+
         mnbMenu.add(mnuPedido);
 
         setJMenuBar(mnbMenu);
@@ -120,6 +129,10 @@ public class GuiMenu extends javax.swing.JFrame {
     private void mniEmitirPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniEmitirPedidoActionPerformed
         new GuiEmitirPedido(cadPed, cadCliVend, cadProd, cadItemPed).setVisible(true);
     }//GEN-LAST:event_mniEmitirPedidoActionPerformed
+
+    private void mniConsultarComissaoVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniConsultarComissaoVendedorActionPerformed
+        new GuiConsultarComissaoVendedor(cadCliVend, cadPed).setVisible(true);       
+    }//GEN-LAST:event_mniConsultarComissaoVendedorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +172,7 @@ public class GuiMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar mnbMenu;
     private javax.swing.JMenuItem mniClientes;
+    private javax.swing.JMenuItem mniConsultarComissaoVendedor;
     private javax.swing.JMenuItem mniEmitirPedido;
     private javax.swing.JMenuItem mniProdutos;
     private javax.swing.JMenuItem mniSair;
